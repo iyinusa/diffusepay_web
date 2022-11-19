@@ -1,0 +1,60 @@
+CRITICAL - 2022-11-18 21:07:10 --> Class 'App\Controllers\BaseController' not found
+#0 /Applications/MAMP/htdocs/diffusepay/system/Autoloader/Autoloader.php(264): include_once()
+#1 /Applications/MAMP/htdocs/diffusepay/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('/Applications/M...')
+#2 /Applications/MAMP/htdocs/diffusepay/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(790): class_exists('\\App\\Controller...', true)
+#6 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(399): CodeIgniter\CodeIgniter->startController()
+#7 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-11-18 21:31:07 --> You must set the database table to be used with your query.
+#0 /Applications/MAMP/htdocs/diffusepay/system/Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Applications/MAMP/htdocs/diffusepay/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(426): CodeIgniter\Model->__call('rave_url', Array)
+#3 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(26): App\Models\Crud->seerbit_get('payments/query/...', 'test')
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('DP-166880306650...')
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#6 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-18 21:31:35 --> You must set the database table to be used with your query.
+#0 /Applications/MAMP/htdocs/diffusepay/system/Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Applications/MAMP/htdocs/diffusepay/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(427): CodeIgniter\Model->__call('rave_key', Array)
+#3 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(26): App\Models\Crud->seerbit_get('https://seerbit...', 'test')
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('DP-166880306650...')
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#6 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-18 22:48:21 --> Undefined variable: data
+#0 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(440): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Applications/M...', 440, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(27): App\Models\Crud->seerbit_post('https://seerbit...', 'test')
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('DP-166880306650...')
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-18 23:39:25 --> Undefined variable: title
+#0 /Applications/MAMP/htdocs/diffusepay/app/Views/main.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Applications/M...', 8, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/diffusepay/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/diffusepay/system/Common.php(1089): CodeIgniter\View\View->render('main', Array, true)
+#4 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(22): view('main', Array)
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->index()
+#6 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#7 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-11-18 23:39:57 --> Invalid file: designs/backend.php
+#0 /Applications/MAMP/htdocs/diffusepay/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('designs/backend...')
+#1 /Applications/MAMP/htdocs/diffusepay/system/View/View.php(226): CodeIgniter\View\View->render('designs/backend', Array, true)
+#2 /Applications/MAMP/htdocs/diffusepay/system/Common.php(1089): CodeIgniter\View\View->render('main', Array, true)
+#3 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(24): view('main', Array)
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->index()
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#6 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

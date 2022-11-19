@@ -1,0 +1,25 @@
+CRITICAL - 2022-11-19 12:47:23 --> Undefined property: stdClass::$amount
+#0 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(524): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/M...', 524, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(37): App\Models\Crud->seerbit_save('1', 'SEER1WF4WJ6IMYX...', 'DP-166885808867...')
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('1', '12500')
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-19 12:49:51 --> Undefined variable: tnx_ref
+#0 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(529): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Applications/M...', 529, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(37): App\Models\Crud->seerbit_save('1', 'SEER1WF4WJ6IMYX...', 'DP-166885808867...')
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('1', '12500')
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-19 12:50:43 --> Undefined property: stdClass::$status
+#0 /Applications/MAMP/htdocs/diffusepay/app/Models/Crud.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/M...', 158, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(78): App\Models\Crud->read_field('id', 1, 'transaction', 'status')
+#2 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Main.php(40): App\Controllers\Main->process(1)
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Main->pay('1', '12500')
+#4 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
