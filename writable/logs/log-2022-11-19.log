@@ -23,3 +23,24 @@ CRITICAL - 2022-11-19 12:50:43 --> Undefined property: stdClass::$status
 #5 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+CRITICAL - 2022-11-19 16:17:54 --> Undefined property: stdClass::$title
+#0 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Api.php(96): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/M...', 96, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Api->login()
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-19 16:18:25 --> Undefined property: stdClass::$title
+#0 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Api.php(96): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/M...', 96, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Api->login()
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-19 16:19:26 --> Undefined property: stdClass::$firstname
+#0 /Applications/MAMP/htdocs/diffusepay/app/Controllers/Api.php(96): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/M...', 96, Array)
+#1 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(825): App\Controllers\Api->login()
+#2 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#3 /Applications/MAMP/htdocs/diffusepay/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/diffusepay/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

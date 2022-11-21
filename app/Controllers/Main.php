@@ -9,7 +9,7 @@ class Main extends BaseController {
         return view('main', $data);
     }
 
-    public function pay($id, $amount) {
+    public function pay($id, $amount, $mtoken='') {
         $pay_script = '';
         $msg = '';
 
@@ -36,15 +36,17 @@ class Main extends BaseController {
             // save transaction
             $trans = $this->Crud->seerbit_save($id, $ref, $pay_ref);
             if($trans->id > 0) {
-                $this->process($trans->id);
+                $this->process($trans->id, $mtoken);
             }
         }
 
         if(!$success) {
             if($amount) {
+                $redir = site_url('main/pay/'.$id.'/'.$amount);
+                if(!empty($mtoken)) $redir .= '/'.$mtoken; // the mtoken us used for callback if payment is from mobile app
+
                 $curr = 'NGN';
                 $country = 'NG';
-                $redir = site_url('main/pay/'.$id.'/'.$amount);
                 $customize['theme'] = array('border_color'=>'0000', 'background_color'=>'ECECEC', 'button_color'=>'052272');
                 $customize['payment_method'] = ["card", "account", "transfer", "wallet", "ussd"];
                 $customize['confetti'] = true;
@@ -69,7 +71,7 @@ class Main extends BaseController {
         return view('main', $data);
     }
 
-    public function process($trans_id) {
+    public function process($trans_id, $mtoken='') {
         // check transaction status
         $user_id = $this->Crud->read_field('id', $trans_id, 'transaction', 'user_id');
         $ref = $this->Crud->read_field('id', $trans_id, 'transaction', 'ref');
@@ -91,6 +93,7 @@ class Main extends BaseController {
                 $ins['amount'] = $amount;
                 $ins['remark'] = 'Vault Funding';
                 $ins['trans_id'] = $trans_id;
+                if(!empty($mtoken)) $ins['mtoken'] = $mtoken; // used to track payment from mobile app
                 $ins['reg_date'] = date(fdate);
                 $ins_id = $this->Crud->create('vault', $ins);
                 if($ins_id > 0) $this->Crud->updates('id', $trans_id, 'transaction', array('item_id'=>$ins_id));

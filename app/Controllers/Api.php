@@ -14,7 +14,7 @@ class Api extends BaseController {
 		header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding, Authorization");
 		header("Content-Type: application/json; charset=UTF-8");
 
-		$this->token = 'EAACva1Mk73MBAPCKAh12445IAxF01sWkiFYAwcViL6MXEi';
+		$this->token = 'EAACva1Mk73MBAPCKAh12445IAxF01sWkiFYAwcViL6MXEiV';
 
 		// check token
 		$token = null;
@@ -50,13 +50,10 @@ class Api extends BaseController {
 			if($this->Crud->check('email', $email, 'user') > 0 || $this->Crud->check('phone', $phone, 'user') > 0) {
 				$msg = 'Email and/or Phone Taken! Please choose another.';
 			} else {
-				// $role_id = $this->Crud->read_field('name', 'Customer', 'access_role', 'id');
 				$ins['fullname'] = $fullname;
 				$ins['email'] = $email;
 				$ins['password'] = md5($password);
 				$ins['phone'] = $phone;
-				// $ins['country_id'] = $this->Crud->read_field('name', $country, 'country', 'id');
-				// $ins['role_id'] = $role_id;
 				$ins['reg_date'] = date(fdate);
 				$user_id = $this->Crud->create('user', $ins);
 				if($user_id > 0) {
@@ -68,7 +65,7 @@ class Api extends BaseController {
 				}
 			}
 		} else {
-			// $msg = 'Missing field.';
+			$msg = 'Missing field.';
 		}
 		
 		echo json_encode(array('status'=>$status, 'msg'=>$msg, 'data'=>$data));
@@ -96,8 +93,9 @@ class Api extends BaseController {
 
 		        foreach($query as $q) {
 					$data['id'] = $q->id;
-					$data['fullname'] = strtoupper($q->title.' '.$q->firstname);
+					$data['fullname'] = $q->fullname;
 					$data['email'] = $q->email;
+					$data['phone'] = $q->phone;
 					$data['image'] = site_url($this->Crud->image($q->img_id, 'big'));
 					$data['reg_date'] = date('M d, Y h:i A', strtotime($q->reg_date));
 				}
@@ -108,7 +106,186 @@ class Api extends BaseController {
 		die;
 	}
 
+	// token
+	public function token($type='get') {
+	    $status = false;
+		$msg = '';
+		$total = 0;
+		$used = 0;
+		$balance = 0;
+		$bal = 0;
+		$data = array();
+		
+		// get 
+		if($type == 'get') {
+		    $call = json_decode(file_get_contents("php://input"));
+		    $user_id = $call->user_id;
+		    
+		    if(!empty($user_id)) {
+		        $query = $this->Crud->read_single('user_id', $user_id, 'token');
+		        if(!empty($query)) {
+		            $status = true;
+		            $msg = 'Successful';
+		            foreach($query as $q) {
+		                $item = array();
+		                
+		                if($q->used) $used += (float)$q->amount;
+						$total += (float)$q->amount;
+		                
+		                $item['id'] = $q->id;
+		                $item['token'] = $q->token;
+						$item['pin'] = $q->pin;
+		                $item['remark'] = $q->remark;
+		                $item['amount'] = (float)$q->amount;
+						$item['used'] = $q->used;
+		                $item['used_date'] = date('M d, Y h:s A', strtotime($q->used_date));
+						$item['date'] = date('M d, Y h:s A', strtotime($q->reg_date));
+		                
+		                $data[] = $item;
+		            }
+		            
+		            $balance = $total - $used;
+		            
+		            $total = $total;
+		            $used = $used;
+					$balance = $balance;
+		        }
+		    }
+		    
+		}
+		
+		// generate
+		if($type == 'generate') {
+		    $call = json_decode(file_get_contents("php://input"));
+		    $user_id = $call->user_id;
+		    $amount = $call->amount;
+			$pin = $call->pin;
+		    
+		    if(!empty($user_id) && !empty($amount)) {
+				// check if vault is enough
+				$vault = $this->vaultStats($user_id);
+				if($amount > $vault->balance) {
+					$msg = 'Insufficient Vault Balance! Please top up your Vault';
+				} else {
+					$rands = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+					$code = substr(str_shuffle($rands), 0, 8);
+
+					$v_ins['user_id'] = $user_id;
+					$v_ins['amount'] = $this->Crud->to_number($amount);
+					$v_ins['token'] = $code;
+					$v_ins['pin'] = $pin;
+					$v_ins['reg_date'] = date(fdate);
+					
+					$w_id = $this->Crud->create('token', $v_ins);
+					if($w_id > 0) {
+						$status = true;
+						$msg = 'VToken Generated Successfully!';
+						$data['id'] = $w_id;
+
+						$fullname = $this->Crud->read_field('id', $user_id, 'user', 'fullname');
+						$email = $this->Crud->read_field('id', $user_id, 'user', 'email');
+
+						// add notification
+						$u_content = 'You generated a vault with N'.number_format($amount);
+						$this->notify(0, $user_id, $u_content, 'vault', $w_id);
+						if($email) {
+							$u_body = 'Dear '.$fullname.',<br/><br/>Your vault is generated with N'.number_format($amount).'.<br/><br/>Thank you.';
+							$this->send_email($email, 'Vault Generated', $u_body);
+						}
+					} else {
+						$msg = 'Failed! - Please Contact Support.';
+					}
+				}
+		    }
+		}
+		
+		echo json_encode(array('status'=>$status, 'msg'=>$msg, 'total'=>$total, 'used'=>$used, 'balance'=>$balance, 'data'=>$data));
+		die;
+	}
+
+	// vault
+	public function vault($type='get') {
+	    $status = false;
+		$msg = '';
+		$total = 0;
+		$used = 0;
+		$balance = 0;
+		$data = array();
+		
+		// get 
+		if($type == 'get') {
+		    $call = json_decode(file_get_contents("php://input"));
+		    $user_id = $call->user_id;
+		    
+		    if(!empty($user_id)) {
+				$vault = $this->vaultStats($user_id);
+				$balance = $vault->balance;
+
+		        $query = $this->Crud->read_single('user_id', $user_id, 'vault');
+		        if(!empty($query)) {
+		            $status = true;
+		            $msg = 'Successful';
+		            foreach($query as $q) {
+		                $item = array();
+
+						$total += (float)$q->amount;
+		                
+		                $item['id'] = $q->id;
+		                $item['amount'] = (float)$q->amount;
+		                $item['remark'] = $q->remark;
+						$item['date'] = date('M d, Y h:s A', strtotime($q->reg_date));
+		                
+		                $data[] = $item;
+		            }
+		        }
+
+				$used = $total - $balance;
+		    }
+		    
+		}
+
+		// check
+		if($type == 'check') {
+		    $call = json_decode(file_get_contents("php://input"));
+		    $user_id = $call->user_id;
+		    $token = $call->token;
+		    
+		    if(!empty($user_id) && !empty($token)) {
+		        $check = $this->Crud->check2('user_id', $user_id, 'mtoken', $token, 'vault');
+				if($check > 0) $status = true;
+		    }
+		    
+		}
+		
+		echo json_encode(array('status'=>$status, 'msg'=>$msg, 'total'=>$total, 'used'=>$used, 'balance'=>$balance, 'data'=>$data));
+		die;
+	}
+
 	//// others //////
+	private function vaultStats($user_id) {
+		$total_vault = 0;
+		$total_token = 0;
+		$balance = 0;
+
+		$tvault = $this->Crud->read_single('user_id', $user_id, 'vault');
+		if(!empty($tvault)) {
+			foreach($tvault as $tv) {
+				$total_vault += (float)$tv->amount;
+			}
+		}
+
+		$ttoken = $this->Crud->read_single('user_id', $user_id, 'token');
+		if(!empty($ttoken)) {
+			foreach($ttoken as $tt) {
+				$total_token += (float)$tt->amount;
+			}
+		}
+		
+		$balance = $total_vault - $total_token;
+
+		return (object)array('total_vault'=>$total_vault, 'total_token'=>$total_token, 'balance'=>$balance);
+	}
+
 	private function notify($from, $to, $content, $item, $item_id) {
 	    $ins['from_id'] = $from;
 	    $ins['to_id'] = $to;

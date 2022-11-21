@@ -42,6 +42,9 @@
 
         <footer class="mt-2 mb-5">
             <div class="text-muted text-center" style="font-size:12px;">
+                <div class="mb-3">
+                    <a href="https://drive.google.com/file/d/1wY4nalbzxRXGBe--mI42GQAmKg_go4B2/view?usp=share_link"><img alt="" src="<?=site_url('assets/images/android.jpg');?>" width="250px" /></a>
+                </div>
                 &copy; <?=date('Y');?> <?=app_name;?>. All Rights Reserved.
             </div>
         </footer>
