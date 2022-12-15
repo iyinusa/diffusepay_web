@@ -62,7 +62,7 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="header-top-right">
                                 <ul class="header-top-menu list-style">
-                                    <li><a href="<?=site_url('contact');?>">Support</a></li>
+                                    <li><a href="javascript:;">Support</a></li>
                                 </ul>
                                 <div class="select-lang">
                                     <i class="ri-global-line"></i>
