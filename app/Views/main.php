@@ -20,18 +20,17 @@
                     <div class="row gx-5 align-items-center">
                         <div class="col-md-6">
                             <div class="hero-content" data-speed="0.10" data-revert="true">
-                                <span>Instant Money Transfer</span>
-                                <h1>Transfer Money Across World In Real Time</h1>
-                                <p>Dea of denouncing pleasure and praising pain was born and lete system, and
-                                    expound the ac teachings aitems to sed quia non numquam amet sit dolor.</p>
+                                <span>Contactless Payment Solution</span>
+                                <h1>Your Cardless and Cashless Payment</h1>
+                                <p>With <?=app_name;?>, protect your Credit/Debit Card details by making seamless, secure, fast, reliable, and confident payment at point-of-sales without worrying about failed transactions. Mercant get to received payments instantly.</p>
                                 <div class="hero-btn">
-                                    <a href="service-one.html" class="btn style1">Get Started</a>
-                                    <a class="play-video" data-fancybox
+                                    <a href="javascript:;" class="btn style1">Get Started</a>
+                                    <!-- <a class="play-video" data-fancybox
                                         href="https://www.youtube.com/watch?v=DGo-OhDWIKQ">
                                         <span class="play-btn"> <i
                                                 class="flaticon-play-button-arrowhead"></i></span>
                                         <span class="sm-none">Watch Video</span>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         </div>
@@ -52,18 +51,17 @@
                     <div class="row gx-5 align-items-center">
                         <div class="col-md-6">
                             <div class="hero-content" data-speed="0.10" data-revert="true">
-                                <span>Online Payment System</span>
-                                <h1>Secured &amp; Easy Online Payment Solution </h1>
-                                <p>Dea of denouncing pleasure and praising pain was born and lete system, and
-                                    expound the ac teachings aitems to sed quia non numquam amet sit dolor.</p>
+                                <span>Secure Payment for Customers</span>
+                                <h1>No Card/Cash Payment</h1>
+                                <p>No need for Card/Cash payment, <?=app_name;?> help protect your card details from online payment. No more transaction failure or cash retraction.</p>
                                 <div class="hero-btn">
-                                    <a href="service-one.html" class="btn style1">Get Started</a>
-                                    <a class="play-video" data-fancybox
+                                    <a href="javascript:;" class="btn style1">Get Started</a>
+                                    <!-- <a class="play-video" data-fancybox
                                         href="https://www.youtube.com/watch?v=DGo-OhDWIKQ">
                                         <span class="play-btn"> <i
                                                 class="flaticon-play-button-arrowhead"></i></span>
                                         <span class="sm-none">Watch Video</span>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         </div>
@@ -84,18 +82,17 @@
                     <div class="row gx-5 align-items-center">
                         <div class="col-md-6">
                             <div class="hero-content" data-speed="0.10" data-revert="true">
-                                <span>Global Money Transfer</span>
-                                <h1>Move Your Money In Easy Secured Steps</h1>
-                                <p>Dea of denouncing pleasure and praising pain was born and lete system, and
-                                    expound the ac teachings aitems to sed quia non numquam amet sit dolor.</p>
+                                <span>Merchant Fast Payout</span>
+                                <h1>Receive Payments Instantly</h1>
+                                <p><?=app_name;?> ensure merchant receives payment instantly, and no need to worry about failed payment/transaction disputes.</p>
                                 <div class="hero-btn">
-                                    <a href="service-one.html" class="btn style1">Get Started</a>
-                                    <a class="play-video" data-fancybox
+                                    <a href="javascript:;" class="btn style1">Get Started</a>
+                                    <!-- <a class="play-video" data-fancybox
                                         href="https://www.youtube.com/watch?v=DGo-OhDWIKQ">
                                         <span class="play-btn"> <i
                                                 class="flaticon-play-button-arrowhead"></i></span>
                                         <span class="sm-none">Watch Video</span>
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         </div>
@@ -114,8 +111,7 @@
         </div>
     </section>
 
-
-    <div class="service-charge-wrap bg-stratos ptb-100">
+    <!-- <div class="service-charge-wrap bg-stratos ptb-100">
         <div class="container">
             <form action="#" class="charge-form">
                 <div class="row justify-content-center">
@@ -152,8 +148,7 @@
                 </div>
             </form>
         </div>
-    </div>
-
+    </div> -->
 
     <section class="feature-wrap pt-100 pb-75">
         <div class="container">
@@ -163,10 +158,9 @@
                         <div class="feature-info">
                             <div class="feature-title">
                                 <span><img src="<?=site_url();?>assets/img/feature/feature-icon-1.png" alt="Image"></span>
-                                <h3>Create An Account</h3>
+                                <h3>Create Account</h3>
                             </div>
-                            <p>Lorem ipsum dolor sit amet dolor alut const slice elit aliquid dolor ametin perfer
-                                endis velit sed fuga volup tation sit praising pain.</p>
+                            <p>Setup personal account, and receive virtual account instantly.</p>
                         </div>
                     </div>
                 </div>
@@ -175,10 +169,9 @@
                         <div class="feature-info">
                             <div class="feature-title">
                                 <span><img src="<?=site_url();?>assets/img/feature/feature-icon-2.png" alt="Image"></span>
-                                <h3>Attach bank Account</h3>
+                                <h3>Fund Account</h3>
                             </div>
-                            <p>Lorem ipsum dolor sit amet dolor alut const slice elit aliquid dolor ametin perfer
-                                endis velit sed fuga volup tation sit praising pain.</p>
+                            <p>Free transfer to your virtual account, no hidden charges.</p>
                         </div>
                     </div>
                 </div>
@@ -187,10 +180,9 @@
                         <div class="feature-info">
                             <div class="feature-title">
                                 <span><img src="<?=site_url();?>assets/img/feature/feature-icon-3.png" alt="Image"></span>
-                                <h3>Send Money</h3>
+                                <h3>Make Payment</h3>
                             </div>
-                            <p>Lorem ipsum dolor sit amet dolor alut const slice elit aliquid dolor ametin perfer
-                                endis velit sed fuga volup tation sit praising pain.</p>
+                            <p>Scan merchant generate QR Code or Generate Token to make payment.</p>
                         </div>
                     </div>
                 </div>
@@ -198,8 +190,7 @@
         </div>
     </section>
 
-
-    <section class="why-choose-wrap style1 pb-100 bg-bunting">
+    <!-- <section class="why-choose-wrap style1 pb-100 bg-bunting">
         <div class="container">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
@@ -255,10 +246,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-
-    <div class="counter-wrap">
+    <!-- <div class="counter-wrap">
         <div class="container">
             <div class="counter-card-wrap">
                 <div class="counter-card">
@@ -295,16 +285,14 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> -->
 
     <section class="service-wrap style3 ptb-100 bg-rock">
         <div class="container">
             <img src="<?=site_url();?>assets/img/service-shape-1.png" alt="Image" class="service-shape-one">
             <img src="<?=site_url();?>assets/img/service-shape-2.png" alt="Image" class="service-shape-two">
             <div class="section-title style1 text-center mb-40">
-                <span>Our Services</span>
-                <h2 class="text-white">Get Your Raxa online Banking</h2>
+                <h2 class="text-white">For Merchants</h2>
             </div>
             <div class="row gx-5 align-items-center">
                 <div class="col-md-6">
@@ -313,9 +301,8 @@
                             <i class="flaticon-payment-method"></i>
                         </span>
                         <div class="service-info">
-                            <h3><a href="service-details.html">Mobile Banking</a></h3>
-                            <p>Is simply dummy text of the printing and setting type the industry's standard dummy
-                                text ever since then nowpri nter took a galley alto.</p>
+                            <h3><a href="javascript:;">Easy Setup</a></h3>
+                            <p>Seamless onboarding and customization of account to start receiving payments.</p>
                         </div>
                     </div>
                 </div>
@@ -325,9 +312,8 @@
                             <i class="flaticon-computer"></i>
                         </span>
                         <div class="service-info">
-                            <h3><a href="service-details.html">Secure Payment</a></h3>
-                            <p>Is simply dummy text of the printing and setting type the industry's standard dummy
-                                text ever since then nowpri nter took a galley alto.</p>
+                            <h3><a href="javascript:;">Accept Payment</a></h3>
+                            <p>Secure, fast, and convenient payment from your customer.</p>
                         </div>
                     </div>
                 </div>
@@ -337,9 +323,8 @@
                             <i class="flaticon-credit-card"></i>
                         </span>
                         <div class="service-info">
-                            <h3><a href="service-details.html">Saving Account</a></h3>
-                            <p>Is simply dummy text of the printing and setting type the industry's standard dummy
-                                text ever since then nowpri nter took a galley alto.</p>
+                            <h3><a href="javascript:;">Quick Settlement</a></h3>
+                            <p>You get settlement on the instant upon payment by customers.</p>
                         </div>
                     </div>
                 </div>
@@ -349,21 +334,19 @@
                             <i class="flaticon-loan-1"></i>
                         </span>
                         <div class="service-info">
-                            <h3><a href="service-details.html">Personal Savings</a></h3>
-                            <p>Is simply dummy text of the printing and setting type the industry's standard dummy
-                                text ever since then nowpri nter took a galley alto.</p>
+                            <h3><a href="javascript:;">Business Insights</a></h3>
+                            <p>Robust sales/revenue analytics to help make appropriate business decisions.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-20">
-                <a href="service-one.html" class="btn style1">View All Services</a>
-            </div>
+            <!-- <div class="text-center mt-20">
+                <a href="javascript:;" class="btn style1">View All Services</a>
+            </div> -->
         </div>
     </section>
 
-
-    <section class="shopping-wrap ptb-100">
+    <!-- <section class="shopping-wrap ptb-100">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12 order-lg-1 order-2">
@@ -397,10 +380,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-
-    <section class="testimonial-wrap ptb-100  bg-albastor">
+    <!-- <section class="testimonial-wrap ptb-100  bg-albastor">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
@@ -513,8 +495,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> -->
 
     <section class="app-wrap  ptb-100 bg-rock">
         <div class="container">
@@ -522,24 +503,21 @@
                 <div class="col-lg-7 col-md-8">
                     <div class="app-content sm-center">
                         <div class="content-title style2">
-                            <h2>You Can Find All Things You Need In Our App</h2>
+                            <h2>Get the <?=app_name;?> App today, and start making secure and instant payment.</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-4 text-md-end sm-center">
                     <div class="app-btn">
-                        <a href="https://play.google.com/store/apps"><img src="<?=site_url();?>assets/img/play-store.png"
-                                alt="Image"></a>
-                        <a href="https://www.apple.com/app-store/"><img src="<?=site_url();?>assets/img/apple-store.png"
-                                alt="Image"></a>
+                        <a href="javascript:;"><img src="<?=site_url();?>assets/img/play-store.png" alt=""></a>
+                        <a href="javascript:;"><img src="<?=site_url();?>assets/img/apple-store.png" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section class="goal-wrap ptb-100">
+    <!-- <section class="goal-wrap ptb-100">
         <div class="container">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
@@ -569,13 +547,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-
-    <section class="blog-wrap pt-100 pb-75 bg-albastor">
+    <!-- <section class="blog-wrap pt-100 pb-75 bg-albastor">
         <div class="container">
             <div class="section-title style1 text-center mb-40">
-                <span>Latest Insights From Raxa</span>
+                <span>Latest Insights</span>
                 <h2>Our Latest Articles</h2>
             </div>
             <div class="row justify-content-center">
@@ -636,7 +613,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 <?php echo $this->endSection(); ?>
 
 <?php echo $this->section('scripts'); ?>

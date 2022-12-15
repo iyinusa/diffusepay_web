@@ -95,7 +95,7 @@
             <div class="header-bottom">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand pt-3" href="<?=site_url();?>">
                             <img class="logo-light" src="<?=site_url();?>assets/img/logo.png?v=0" alt="logo">
                             <img class="logo-dark" src="<?=site_url();?>assets/img/logo-white.png?v=0" alt="logo">
                         </a>
@@ -104,22 +104,8 @@
                                 <a href="javascript:void(0)"> <i class="ri-close-line"></i></a>
                             </div>
                             <ul class="navbar-nav ms-auto">
-                                <li class="nav-item  has-dropdown">
-                                    <a href="index.html#" class="nav-link active">
-                                        Home
-                                        <i class="ri-arrow-down-s-line"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="index.html" class="nav-link active">Home One</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link ">Home Two</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">Home Three</a>
-                                        </li>
-                                    </ul>
+                                <!-- <li class="nav-item">
+                                    <a href="<?=site_url();?>" class="nav-link active">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="about.html" class="nav-link">
@@ -265,43 +251,22 @@
                                 </li>
                                 <li class="nav-item xl-none">
                                     <a href="register.html" class="btn style1">Register Now</a>
-                                </li>
+                                </li> -->
                             </ul>
-                            <div class="others-options  lg-none">
-                                <div class="searchbox">
-                                    <input type="search" placeholder="Search">
-                                    <button type="button">
-                                        <i class="flaticon-search"></i>
-                                    </button>
-                                </div>
+                            <!-- <div class="others-options lg-none">
                                 <div class="header-btn lg-none">
-                                    <a href="register.html" class="btn style1">Register Now</a>
+                                    <a href="javascript:;" class="btn style1">Register Now</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </nav>
                     <div class="mobile-bar-wrap">
                         <div class="mobile-sidebar">
                             <i class="ri-menu-4-line"></i>
                         </div>
-                        <button class="searchbtn xl-none" type="button">
-                            <i class="flaticon-search"></i>
-                        </button>
                         <div class="mobile-menu xl-none">
                             <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
                         </div>
-                    </div>
-                </div>
-                <div class="search-area">
-                    <div class="container">
-                        <form action="#">
-                            <div class="form-group">
-                                <input type="search" placeholder="Search Here" autofocus>
-                            </div>
-                        </form>
-                        <button type="button" class="close-searchbox">
-                            <i class="ri-close-line"></i>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -310,7 +275,7 @@
         <?=$this->renderSection('content'); ?>
 
         <footer class="footer-wrap bg-rock">
-            <div class="container">
+            <!-- <div class="container">
                 <img src="<?=site_url();?>assets/img/footer-shape-1.png" alt="Image" class="footer-shape-one">
                 <img src="<?=site_url();?>assets/img/footer-shape-2.png" alt="Image" class="footer-shape-two">
                 <div class="row pt-100 pb-75">
@@ -448,13 +413,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="copyright-text">
                 <p> <i class="ri-copyright-line"></i>
-                    <script data-cfasync="false"
-                        src="<?=site_url();?>../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                    <script>document.write(new Date().getFullYear())</script> Raxa. All Rights Reserved By <a
-                        href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
+                    <script>document.write(new Date().getFullYear())</script> <?=app_name;?>. All Rights Reserved.
                 </p>
             </div>
         </footer>
